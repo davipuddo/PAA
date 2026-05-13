@@ -51,8 +51,10 @@ int main (void) {
         }
     }
 
-    int target = 13;
-    printf("target: %d\n", target);
+    int target = 0;
+    printf("target = ");
+    scanf("%d", &target);
+    getchar();
 
     // Define table size
     int D = target;
@@ -74,6 +76,9 @@ int main (void) {
         if (coins[i] < D) {
             int* new_coins = (int*)malloc(sizeof(int));
             new_coins[0] = coins[i];
+
+            freeValue(dp[coins[i]]);
+
             dp[coins[i]] = newValue(1, new_coins);
         }
     }
