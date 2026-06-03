@@ -5,18 +5,14 @@
 char* LCS (char*** table, char* x, char* y, int n, int m) {
 
     char* res = "";
-
     if (n > 0 && m > 0) {
-
         char** cur = &table[n-1][m-1];
 
-        if (cur && *cur) {
+        if (*cur) {
             res = *cur;
 
         } else {
-
-            int bg = (n > m) ? n : m;
-            res = (char*)calloc(bg+1, sizeof(char));
+            res = (char*)calloc(2, sizeof(char)); // 1 char + \0
 
             char cx = x[n-1];
             char cy = y[m-1];
@@ -45,7 +41,6 @@ char* LCS (char*** table, char* x, char* y, int n, int m) {
 
 void invertS (char* x) {
     if (x) {
-
         int n = strlen(x);
         int step = (int)((double)n/2.0);
 
@@ -86,7 +81,7 @@ int main (void) {
     }
 
     invertS(res);
-    printf("res: %s\n", res);
+    printf("LCS: %s\n", res);
 
     if (table) {
         for (int i = 0; i < n; i++) {
