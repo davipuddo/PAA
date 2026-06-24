@@ -124,7 +124,6 @@ struct Points {
 
 Points inter(Points Px, Points Py, int L, int M, int R, double delta) {
     Points Sy = Points();
-    Sy.print();
 
     int n = Py.list.size();
     for (int i = 0; i < n; i++) {
