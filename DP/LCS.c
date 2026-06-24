@@ -59,8 +59,8 @@ void invertS (char* x) {
 
 int main (void) {
     
-    char x [6] = "12345";
-    char y [6] = "92349";
+    char x [6] = "1ah4jh";
+    char y [6] = "9249jh";
 
     int n = 5;
     int m = 5;
